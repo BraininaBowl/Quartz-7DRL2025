@@ -1,0 +1,659 @@
+.device {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.section {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.section > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: inset 0 0 4vmin -1vmin var(--bg);
+}
+
+.monitor {
+    width: 60vmin;
+    height: 60vmin;
+    transform: rotateY(-13deg) rotateX(-2deg) translate3d(-1.5vmin, 0, 0);
+}
+
+.monitor .top {
+    width: 60vmin;
+    height: 20vmin;
+    transform: rotateX(90deg) translate3d(0, -10vmin, 10vmin);
+    background-color: var(--col_casing);
+}
+
+.monitor .bottom {
+    width: 60vmin;
+    height: 20vmin;
+    transform: rotateX(90deg) translate3d(0, -10vmin, -50vmin);
+    background-color: var(--col_casing_mid);
+}
+
+.monitor .left {
+    width: 20vmin;
+    height: 60vmin;
+    transform: rotateY(90deg) translate3d(10vmin, 0, -10vmin);
+    background-color: var(--col_casing);
+}
+
+.monitor .right {
+    width: 20vmin;
+    height: 60vmin;
+    transform: rotateY(90deg) translate3d(10vmin, 0, 50vmin);
+    background-color: var(--col_casing);
+}
+
+.cylinder {
+    width: 0;
+    height: 90vmin;
+    transform: translate3d(0, 0, -6vmin) scale3D(0.56, 0.56, 0.1);
+    position: absolute;
+    left: 50%;
+    top: -15vmin;
+}
+
+.pane {
+    width: round(up, calc(21vmin + 3px), 1px);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: calc(-10.5vmin - 1.5px);
+    overflow: clip;
+}
+
+.pane_1 {
+    transform: rotateY(-30deg) translate3D(0, 0, 80vmin);
+}
+.pane_2 {
+    transform: rotateY(-15deg) translate3D(0, 0, 80vmin);;
+}
+.pane_3 {
+    transform: rotateY(0deg)  translate3D(0, 0, 80vmin);;
+}
+.pane_4 {
+    transform: rotateY(15deg)  translate3D(0, 0, 80vmin);;
+}
+.pane_5 {
+    transform: rotateY(30deg)  translate3D(0, 0, 80vmin);
+}
+
+.pane:first-of-type {
+	border-radius: 2vmin 0 0 2vmin;
+}
+
+.pane:last-of-type {
+	border-radius: 0 2vmin 2vmin 0;
+}
+
+.pane_inner {
+    width: 105vmin;
+    height: 90vmin;
+    background: linear-gradient(96deg, var(--bg_s) 8%, var(--bg) 60%, var(--bg_h) 70%, var(--bg_h));
+	border-radius: 2vmin;
+    box-shadow: 
+    inset 0.2vmin 0.2vmin 0.2vmin 0 var(--col_casing_mid),
+    inset 0.4vmin 0.4vmin 0.2vmin 0 var(--col_casing),
+    inset 1vmin 1vmin 0 0 var(--col_casing_dark),
+    inset -0.2vmin -0.2vmin 0.4vmin 0 var(--col_casing_dark),
+    inset -0.4vmin -0.4vmin 0.4vmin 0 var(--col_casing),
+    inset -1vmin -1vmin 0 0 var(--col_casing_mid);
+    padding: 8px;
+}
+
+.pane_inner .screen_content {
+    width: 100%;
+    height: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size: round(max(3vmin, 24px),1px);
+    padding: 2vmin;
+    animation: turn-on 0.3s 0.6s linear normal both;
+}
+
+.pane_1 .pane_inner {
+    transform: translateX(0);
+}
+
+.pane_2 .pane_inner {
+    transform: translateX(-20%);
+}
+
+.pane_3 .pane_inner {
+    transform: translateX(-40%);
+}
+
+.pane_4 .pane_inner {
+    transform: translateX(-60%);
+}
+
+.pane_5 .pane_inner {
+    transform: translateX(-80%);
+}
+
+.phase_counter {
+    transform: translate3d(21vmin, 57vmin, 1vmin) rotateX(-8deg)  ; 
+}
+
+.monitor .phase_counter .top {
+    width: 40vmin;
+    height: 16vmin;
+    transform: rotateX(90deg) translate3d(0, -8vmin, 8vmin);
+    background-color: var(--col_casing_mid);
+}
+
+.monitor .phase_counter .front {
+    width: 40vmin;
+    height: 6vmin;
+    background-color: var(--col_casing);
+    padding: 1vmin 2vmin;
+    display: flex;
+    flex-direction: row;
+    gap: 2vmin;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.monitor .phase_counter .front::after {
+    --dist: 0.5vmin;
+    position: absolute;
+    display: block;
+    content: "";
+    top: var(--dist);
+    bottom: var(--dist);
+    left: var(--dist);
+    right: var(--dist);
+    border: 0.5vmin solid var(--bg2);
+    border-radius: 0.5vmin;
+}
+
+.monitor .phase_counter .bottom {
+    width: 40vmin;
+    height: 16vmin;
+    transform: rotateX(90deg) translate3d(0, -8vmin, 2vmin);
+    background-color: var(--col_casing_dark);
+}
+
+.monitor .phase_counter .left {
+    width: 16vmin;
+    height: 6vmin;
+    transform: rotateY(90deg) translate3d(8vmin, 0, -8vmin);
+    background-color: var(--col_casing_mid);
+}
+
+.monitor .phase_counter .right {
+    width: 16vmin;
+    height: 6vmin;
+    transform: rotateY(90deg) translate3d(8vmin, 0, 32vmin);
+    background-color: var(--col_casing_mid);
+}
+
+
+.phase_counter .phase {
+    background-color: var(--bg4);
+    width: 3vmin;
+    height: 3vmin;
+    border-radius: 50%;
+    box-shadow: 
+    inset -2vmin -2vmin 1vmin 0 var(--bg),
+    -0.1vmin -0.1vmin 1vmin 0 var(--col_casing),
+    0.25vmin 0.25vmin 1vmin 0 var(--col_casing_dark)
+    ;
+    transition: box-shadow 0.2s ease-in;
+}
+
+.phase_counter .phase_half{
+    background-color: var(--fg); 
+    box-shadow: 
+    inset 0vmin 0vmin 0.25vmin 0.70vmin var(--bg),
+    inset -0.25vmin -0.25vmin 0.75vmin 1.0vmin var(--aqua-dim),
+    -0.1vmin -0.1vmin 1vmin 0 var(--col_casing),
+    0.25vmin 0.25vmin 1vmin 0 var(--col_casing_dark)
+    ;
+}
+
+.phase_counter .phase_full{
+    background-color: var(--fg); 
+    box-shadow: 
+    inset 0vmin 0vmin 0.25vmin 0 var(--bg4),
+    inset -0.25vmin -0.25vmin 0.75vmin 1vmin var(--aqua-dim),
+    0vmin 0vmin 0.5vmin 0.125vmin var(--fg),
+    0vmin 0vmin 15vmin 0.5vmin var(--aqua),
+    -0.1vmin -0.1vmin 1vmin 0 var(--col_casing),
+    0.25vmin 0.25vmin 1vmin 0 var(--col_casing_dark),
+    0 0 0 0.125vmin var(--bg)
+    ;
+}
+
+.controls {
+    transform: translate3d(1.5vmin, 0, 2vmin) rotateX(-2deg) rotateY(7deg);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.directions {
+    width: 30vmin;
+    height: 30vmin;
+}
+
+.directions .button {
+    transform: translateZ(0.1vmin);
+}
+
+.directions .top {
+    width: 30vmin;
+    height: 30vmin;
+    transform: rotateX(90deg) translate3d(0, -15vmin, 15vmin);
+    background-color: var(--col_casing_dark);
+}
+
+.directions .front {
+    width: 30vmin;
+    height: 30vmin;
+    background-color: var(--col_casing_mid);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 2vmin 0 0;
+    transform: translate3D(0, 0, 0.1vmin);
+}
+
+.directions .bottom {
+    width: 30vmin;
+    height: 30vmin;
+    transform: rotateX(90deg) translate3d(0, -15vmin, -15vmin);
+    background-color: var(--col_casing_dark);
+}
+
+.directions .left {
+    width: 30vmin;
+    height: 30vmin;
+    transform: rotateY(90deg) translate3d(15vmin, 0, -15vmin);
+    background-color: var(--col_casing_mid);
+}
+
+.directions .right {
+    width: 30vmin;
+    height: 30vmin;
+    transform: rotateY(90deg) translate3d(15vmin, 0, 15vmin);
+    background-color: var(--col_casing_mid);
+}
+
+.directions .front::after {
+    --dist: 0.5vmin;
+    position: absolute;
+    display: block;
+    content: "";
+    top: var(--dist);
+    bottom: var(--dist);
+    left: var(--dist);
+    right: var(--dist);
+    border: 0.5vmin solid var(--bg2);
+    border-radius: 0.5vmin;
+}
+
+.directions .front .moves {
+    --size: 12vmin;
+    --gap: 1vmin;
+    width: calc(var(--size) + var(--gap));
+    height: calc(var(--size) + var(--gap));
+    border-radius: 1vmin;
+    background-color: var(--bg1);
+    border: 1vmin solid var(--bg1);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    align-items: center;
+    justify-content: center;
+    transform: rotateZ(45deg);
+    padding: var(--gap);
+    box-shadow: 0.125vmin 0.125vmin 0.5vmin 0.125vmin var(--bg4);
+}
+
+.directions .front .moves .button {
+    width: calc((var(--size) / 2) - (var(--gap) * 2));
+    height: calc((var(--size) / 2) - (var(--gap) * 2)); 
+    --color: var(--blue);
+    filter: drop-shadow(0.5vmin 0.25vmin 1vmin 0 var(--bg));
+    cursor: pointer;
+}
+
+.directions .front .moves .button_up {
+    border-style: solid;
+    border-width: calc((var(--size) / 2) - (var(--gap) * 2)) calc((var(--size) / 2) - (var(--gap) * 2)) 0 0;
+    border-color: var(--color) transparent transparent transparent;
+}
+
+.directions .front .moves .button_right {
+    border-style: solid;
+    border-width: 0 calc((var(--size) / 2) - (var(--gap) * 2)) calc((var(--size) / 2) - (var(--gap) * 2)) 0 ;
+    border-color: transparent var(--color) transparent transparent;
+}
+
+.directions .front .moves .button_down {
+    border-style: solid;
+    border-width: 0 0 calc((var(--size) / 2) - (var(--gap) * 2)) calc((var(--size) / 2) - (var(--gap) * 2));
+    border-color: transparent transparent var(--color) transparent;
+}
+
+.directions .front .moves .button_left {
+    border-style: solid;
+    border-width: calc((var(--size) / 2) - (var(--gap) * 2)) 0 0 calc((var(--size) / 2) - (var(--gap) * 2));
+    border-color: transparent transparent transparent var(--color);
+}
+
+.directions .front .action {
+    width: 16vmin;
+    height: 6vmin;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.directions .front .action .button {
+    width: 6vmin;
+    height: 6vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Ubuntu;
+    font-size: 3vmin;
+    line-height: 100%;
+    border-radius: 50%;
+    background-color: var(--blue-dim);
+    cursor: pointer;
+    color: var(--bg);
+    box-shadow: 
+    inset 0.125vmin 0.125vmin 0.125vmin 0.125vmin var(--blue),
+    inset -0.25vmin -0.25vmin 0.5vmin 0.125vmin var(--blue),
+    inset 0.125vmin 0.125vmin 0.125vmin 0.125vmin var(--bg4),
+    inset 0.25vmin 0.25vmin 0.5vmin 0.125vmin var(--bg4),
+    0.125vmin 0.125vmin 0.75vmin 0.25vmin var(--bg4)
+    ;
+}
+
+.music {
+    width: 28vmin;
+    height: 12vmin;
+    transform: translate3d(0, 0vmin, -1vmin);
+}
+
+.music .top {
+    width: 28vmin;
+    height: 8vmin;
+    transform: rotateX(90deg) translate3d(0, -4vmin, 4vmin);
+    background-color: var(--col_casing_dark);
+}
+
+.music .bottom {
+    width: 28vmin;
+    height: 12vmin;
+    transform: rotateX(90deg) translate3d(0, -6vmin, -6vmin);
+    background-color: var(--col_casing_dark);
+}
+
+.music .left {
+    width: 12vmin;
+    height: 12vmin;
+    transform: rotateY(90deg) translate3d(6vmin, 0, -6vmin);
+    background-color: var(--col_casing_mid);
+}
+
+.music .right {
+    width: 12vmin;
+    height: 12vmin;
+    transform: rotateY(90deg) translate3d(6vmin, 0, 22vmin);
+    background-color: var(--col_casing_mid);
+}
+
+.music .front {
+    width: 28vmin;
+    height: 12vmin;
+    background-color: var(--col_casing_mid);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 1vmin;
+    gap: 1vmin;
+    transform: (0, 0, 0.1vmin);
+}
+
+.music .front .player {
+    width: 26vmin;
+    height: 6vmin;
+    background-color: var(--bg);
+    border-radius: 2vmin;
+    overflow: clip;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1vmin;
+    padding-top: 2vmin;
+}
+
+.music .front .player::after {
+    content: "";
+    width: 26vmin;
+    height: 6vmin;
+    box-shadow: 
+    inset 0.125vmin 0.125vmin 0 0 var(--bg_h),
+    inset -0.125vmin -0.125vmin 0 0 var(--col_casing_dark),
+    inset 0.125vmin 0.125vmin 1vmin 1vmin var(--bg),
+    inset 1vmin 1vmin 2vmin 1vmin var(--bg2);
+    border-radius: 2vmin;
+    position: absolute;
+    top: 0;
+}
+
+.music .front .player .spool {
+    width: 10vmin;
+    height: 10vmin;
+    border-radius: 50%;
+    background-color: var(--bg1);
+    box-shadow: 
+    inset 0 0 0 0.25vmin var(--bg3),
+    inset 0 0 0 1vmin var(--bg2), 
+    inset 0 0 0 1.25vmin var(--bg3),
+    inset 0 0 0 2vmin var(--bg2),
+    inset 0 0 0 2.25vmin var(--bg3),
+    inset 0 0 0 3vmin var(--bg2),
+    inset 0 0 0 3.25vmin var(--bg3),
+    inset 0 0 0 4vmin var(--bg2)
+    ;
+    position: relative;
+}
+
+.music .front .player.playing .spool {
+    animation: music_spool 4s linear infinite;
+}
+
+
+.music .front .player .spool::before, .music .front .player .spool::after {
+    content: "";
+    display: block;
+    width: 0.5vmin;
+    height: 3vmin;
+    background-color: var(--bg1);
+    position: absolute;
+    top: 3.5vmin;
+    left: 4.75vmin;
+    box-shadow: 0.5vmin 0.5vmin 1vmin var(--bg);
+}
+
+.music .front .player .spool::before {
+    transform: rotateZ(90deg);
+}
+
+@keyframes music_spool {
+    0% {transform:rotateZ(0deg) rotateX(15deg);}
+    50% {transform:rotateZ(180deg) rotateY(15deg);}
+    100% {transform:rotateZ(360deg) rotateX(15deg);}
+  }
+
+.music .front .buttons {
+    width: 26vmin;
+    height: 4vmin;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 1vmin;
+    transform: translate3d(0, 0, 0.75vmin);
+}
+
+.music .front .buttons .button {
+    width: 4vmin;
+    height: 6vmin;
+    background-color: var(--blue);
+    transform: rotateX(15deg);
+    transform-origin: top;
+    cursor: pointer;
+}
+
+.music .front .buttons .button .small {
+    font-size: 70%;
+    font-weight: 900;
+    line-height: 110%;
+}
+
+.music .front .buttons .button::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: block;
+    width: 1vmin;
+    height: 6vmin;
+    background-color: var(--fg2);
+    transform: rotateY(90deg) translate3d(0.5vmin, 0, -0.5vmin);
+}
+
+.music .front .buttons .button::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: block;
+    width: 4vmin;
+    height: 1vmin;
+    background-color: var(--blue-dim);
+    transform: rotateX(90deg) translate3d(0,-0.5vmin,-5.5vmin);
+}
+
+.music_button_label {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Ubuntu;
+    font-size:  2vmin;
+    line-height: 100%;
+    font-weight: 700;
+    color: var(--bg1);
+}
+
+.music .front .song_counter {
+    position: absolute;
+    width: 8vmin;
+    height: 3vmin;
+    background-color: var(--bg2);
+    color: var(--fg2);
+    left: 1vmin;
+    bottom: 1vmin;
+    border-radius: 0.5vmin;
+    font-family: Ubuntu;
+    font-size: 1.5vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(115deg,
+    var(--bg2) 0%,
+    var(--bg1) 100%
+    );
+}
+
+.music .front .song_counter::after {
+    content: "";
+    width: 8vmin;
+    height: 3vmin;
+    box-shadow: 
+    inset 0.125vmin 0.125vmin 0 0 var(--bg_h),
+    inset 0.5vmin 0.5vmin 1.5vmin 0 var(--bg),
+    inset -0.125vmin -0.125vmin 0 0 var(--fg3);
+    border-radius: 0.5vmin;
+    position: absolute;
+    top: 0;
+}
+
+
+
+/* *** Portrait *** */
+
+@media (orientation: portrait) {
+
+    .device {
+        flex-direction: column;
+    }
+
+    .phase_counter {
+        transform: translate3d(65vmin, 17vmin, -6vmin) rotateY(2deg) rotateZ(90deg);
+    }
+
+    .phase_counter .phase {
+        transform: rotateZ(-90deg);
+    }
+
+
+    .controls {
+        transform: translate3d(7.5vmin, 0, 3vmin) rotateY(-7deg);
+        flex-direction: row;
+    }
+
+    .music {
+        transform: translate3d(-8vmin, 0, -5vmin) rotateZ(-90deg);
+    }
+
+    .music_button_label {
+        transform: rotateZ(90deg);
+    }
+
+    .music .front .buttons .button::before {
+        transform: rotateY(90deg) translate3d(0.5vmin, 0, 3.5vmin);
+    }
+
+    .music .front .buttons {
+        width: 20.5vmin;
+        height: 4vmin;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        justify-content: flex-end;
+        gap: 1vmin;
+        transform: translate3d(0, 0, 0.75vmin);
+    }
+
+    .music .right {
+        background: linear-gradient(90deg, var(--col_casing_mid) -60%, var(--col_casing_dark) 100%);
+    }
+
+  }

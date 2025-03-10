@@ -1,0 +1,136 @@
+.screen_content .actor {
+    font-family: "tabler-icons";
+    font-size: 12vmin;
+    color: var(--aqua);
+    text-shadow: 0 0 1vmin var(--aqua);
+    position: absolute;
+    width: 25%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;}
+
+.transition {
+    transition: all 0.05s ease-in;
+}
+
+.screen_content .actor.type_player {
+    color: var(--blue);
+    text-shadow: 0 0 1vmin var(--blue);
+}
+
+.screen_content .actor.type_piston {
+    color: var(--aqua);
+    text-shadow: 0 0 1vmin var(--aqua);
+}
+
+.screen_content .actor.type_grunt, .screen_content .actor.type_ranger {
+    color: var(--yellow);
+    text-shadow: 0 0 1vmin var(--yellow);
+}
+
+.screen_content .actor.type_song, .screen_content .actor.type_charge, .screen_content .actor.type_win {
+    color: var(--green);
+    text-shadow: 0 0 1vmin var(--green);
+}
+.screen_content .actor.type_spike {
+    color: var(--orange);
+    text-shadow: 0 0 1vmin var(--orange);
+}
+
+
+.screen_content .actor.type_wall {
+    background-color: var(--bg2);
+    /* border: 2vmin inset var(--bg); */
+    box-shadow: inset 0 0 1vmin 0.25vmin var(--bg4);
+    border-radius: 1.5vmin;
+}
+
+.screen_content .actor.type_pit {
+    background-color: var(--bg1);
+    /* border: 2vmin inset var(--bg); */
+    box-shadow: inset 0 0 1vmin 0.25vmin var(--bg1);
+    border-radius: 1.5vmin;
+    z-index: -1;
+}
+
+.screen_content .actor.type_pit::before {
+    color: rgba(0,0,0,0);
+    position: absolute;
+    top: 0;
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 9.5vmin 12vmin 0 12vmin;
+    border-color: var(--bg) transparent transparent transparent;
+    z-index: 0;
+}
+
+.screen_content .actor.type_pit::after {
+    color: rgba(0,0,0,0);
+    position: absolute;
+    bottom: 0;
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 12vmin 9.5vmin 12vmin;
+    border-color: transparent transparent var(--bg2) transparent;
+    z-index: 0;
+}
+
+
+.screen_content .actor.class_enemy[data-sight-range='1']::before {
+    --sight-range: 1;
+}
+.screen_content .actor.class_enemy[data-sight-range='2']::before {
+    --sight-range: 2;
+}
+.screen_content .actor.class_enemy[data-sight-range='3']::before {
+    --sight-range: 3;
+}
+
+.screen_content .actor.class_enemy[data-ai='true']::before {
+    z-index: -1;
+    display: block;
+    position: absolute;
+    content: "";
+    background: repeating-linear-gradient(-45deg, var(--green-dim), var(--green-dim) 1vmin, rgba(0,0,0,0) 1vmin, rgba(0,0,0,0) 2vmin);
+    border-radius: 1.5vmin;
+    opacity: 0.2;
+}
+
+.screen_content .actor.class_enemy[data-aware='true']::before {
+    background: repeating-linear-gradient(-45deg, var(--yellow-dim), var(--yellow-dim) 1vmin, rgba(0,0,0,0) 1vmin, rgba(0,0,0,0) 2vmin);
+}
+
+.screen_content .actor.class_enemy[data-dir='0']::before {
+    width: 100%;
+    height: calc(var(--sight-range) * 100%);
+    top: calc((var(--sight-range) - 1) * -100%);
+}
+
+.screen_content .actor.class_enemy[data-dir='1']::before {
+    width: calc(var(--sight-range) * 100%);
+    height: 100%;
+    left: 0;
+}
+
+.screen_content .actor.class_enemy[data-dir='2']::before {
+    width: 100%;
+    height: calc(var(--sight-range) * 100%);
+    top: 0;
+}
+
+.screen_content .actor.class_enemy[data-dir='3']::before {
+    width: calc(var(--sight-range) * 100%);
+    height: 100%;
+    left: calc((var(--sight-range) - 1) * -100%);
+}
+
+.screen_content .actor.death, .screen_content .actor.cleanup  {
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.5s 0.1s ease-in;
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Quartz</title>
+		<link rel="stylesheet" href="style/vars.css" />
+		<link rel="stylesheet" href="style/style.css" />
+		<link rel="stylesheet" href="style/hardware.css" />
+		<link rel="stylesheet" href="style/tabler-icons.min.css" />
+		<link rel="stylesheet" href="style/fonts.css" />
+		<link rel="stylesheet" href="style/glyphs.css" />
+		<link rel="stylesheet" href="style/crt.css" />
+		<link rel="stylesheet" href="style/hardware.css" />
+	</head>
+	<body id="body">
+		<div class="device">
+			<div class="monitor section">
+				<div class="top"></div>
+				<div class="bottom"></div>
+				<div class="left"></div>
+				<div class="right"></div>
+				<div id="screen">
+					<div class="cylinder">
+						<div class="pane pane_1">
+							<div class="pane_inner">
+								<div class="screen_content"></div>
+								<div class="crt"></div>
+								<div class="scanlines"></div>
+							</div>
+						</div>
+						<div class="pane pane_2">
+							<div class="pane_inner">
+								<div class="screen_content"></div>
+								<div class="crt"></div>
+								<div class="scanlines"></div>
+							</div>
+						</div>
+						<div class="pane pane_3">
+							<div class="pane_inner">
+								<div class="screen_content"></div>
+								<div class="crt"></div>
+								<div class="scanlines"></div>
+							</div>
+						</div>
+						<div class="pane pane_4">
+							<div class="pane_inner">
+								<div class="screen_content"></div>
+								<div class="crt"></div>
+								<div class="scanlines"></div>
+							</div>
+						</div>
+						<div class="pane pane_5">
+							<div class="pane_inner">
+								<div class="screen_content"></div>
+								<div class="crt"></div>
+								<div class="scanlines"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="phase_counter section">
+					<div class="top"></div>
+					<div class="bottom"></div>
+					<div class="left"></div>
+					<div class="right"></div>
+					<div class="front">
+						<div class="label">PHASE</div>
+						<div class="phase" data-phase="1"></div>
+						<div class="phase" data-phase="2"></div>
+						<div class="phase" data-phase="3"></div>
+						<div class="phase" data-phase="4"></div>
+					</div>
+				</div>
+			</div>
+			<div class="controls">
+				<div class="directions section">
+					<div class="top"></div>
+					<div class="bottom"></div>
+					<div class="left"></div>
+					<div class="right"></div>	
+					<div class="front">
+						<div class="moves">
+							<div class="button button_up" data-input="up"></div>
+							<div class="button button_right" data-input="right"></div>
+							<div class="button button_left" data-input="left"></div>
+							<div class="button button_down" data-input="down"></div>
+						</div>
+						<div class="action">
+							<div class="button button_a" data-input="back">Q</div>
+							<div class="button button_b" data-input="confirm">E</div>
+						</div>
+					</div>	
+				</div>
+				<div class="music section">
+					<div class="top"></div>
+					<div class="bottom"></div>
+					<div class="left"></div>
+					<div class="right"></div>	
+					<div class="front">
+						<div class="player">
+							<div class="spool"></div>
+							<div class="spool"></div>
+						</div>
+						<div class="buttons">
+							<div class="button button_prev" data-input="song_prev"><div class="music_button_label"><i class="ti ti-player-skip-back-filled"></i></div></div>
+
+							<div class="button button_playpause" data-input="song_playpause"><div class="music_button_label"><i class="ti ti-player-play-filled"></i></div></div>
+
+							
+							<div class="button button_next" data-input="song_next"><div class="music_button_label"><i class="ti ti-player-skip-forward-filled"></i></div></div>
+						</div>
+						<div class="song_counter">1</div>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script src='script/WebAudioFontPlayer.js'></script>
+	<script src='script/MIDIFile.js'></script>
+	<script src='script/MIDIPlayer.js'></script>
+	<script src="script/setup_vars.js"></script>
+	<script src="script/helpers.js"></script>
+	<script src="script/input.js"></script>
+	<script src="script/entities.js"></script>
+	<script src="script/draw.js"></script>
+	<script src="script/map.js"></script>
+	<script src="script/phase.js"></script>
+	<script src="script/loop.js"></script>
+	<script src="script/engine.js"></script>
+	<script src="script/menu.js"></script>
+	<script src="script/music.js"></script>
+	<script src="script/init.js"></script>
+
+</html>
+ 

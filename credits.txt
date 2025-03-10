@@ -1,0 +1,8 @@
+Music from mfiles https://www.mfiles.co.uk/classical-midi.htm
+Midi player by Francisco Igor  https://fraigo.github.io/javascript-midi-player/
+Midi soundfont by Sergey Surikov https://github.com/surikov/webaudiofontdata
+Font "Ubuntu" by Dalton Maag https://design.ubuntu.com/font
+Color scheme "Gruvbox" by Pavel Pertsev https://github.com/morhetz/gruvbox
+Icons by Tabler https://tabler.io/icons
+
+All mistakes, code, design, and everything else by Frans van Bellen https://braininabowl.com 
