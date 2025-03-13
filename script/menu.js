@@ -44,7 +44,7 @@ function moveMenu(dir) {
 
     document.querySelectorAll("#screen .menu_item:nth-of-type(" + (menu_active_item + 1) + ")").forEach(item => {
         item.classList.add("menu_active_item");
-        item.scrollIntoView();
+        //item.scrollIntoView();
     });
     if (menu.items[menu_active_item].hover_action) {
         window[menu.items[menu_active_item].hover_action](menu.items[menu_active_item].hover_args);
