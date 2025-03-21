@@ -98,6 +98,7 @@ function newLevel() {
 	events = [];
 	actors=[]
 	clearMapVis();
+	current_turn = 0;
 	current_level++;
 	newEvent({action:"function", source: "setSeed", target:getRandomInt(1000000000, 999999999999999999999999999)})
 	parseEvents();
